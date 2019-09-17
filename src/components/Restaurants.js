@@ -17,6 +17,9 @@ class Restaurants extends Component {
   }
 };
 
+
+
+
 const mapStateToProps = state => {
   return { restaurants: state.restaurants }
 }
