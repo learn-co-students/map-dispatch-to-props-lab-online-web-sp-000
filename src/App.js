@@ -14,3 +14,5 @@ export class App extends Component {
 };
 
 export default App;
+
+// already has access to a store
