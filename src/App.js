@@ -6,7 +6,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <RestaurantInput />
+        <RestaurantInput store={this.props.store}/>
         <Restaurants />
       </div>
     );
@@ -14,3 +14,5 @@ export class App extends Component {
 };
 
 export default App;
+
+
