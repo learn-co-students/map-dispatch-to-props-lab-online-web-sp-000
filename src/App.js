@@ -14,10 +14,4 @@ export class App extends Component {
   }
 };
 
-const mapStateToProps = (state) =>{
-  return {
-    resturants: resturants.items
-  }
-}
-
-export default connect(mapStateToProps, { addItem})(App);
+export default App
