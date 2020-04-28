@@ -5,7 +5,7 @@ import Restaurants from './components/Restaurants';
 // import { addRestaurant } from  './actions/restaurants';
 
 
-export class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="App">
