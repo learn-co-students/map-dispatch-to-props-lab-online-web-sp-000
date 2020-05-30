@@ -23,11 +23,10 @@ export class RestaurantInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addRestaurant()
+    this.props.addRestaurant(this.state)
   }
 
   render() {
-    debugger
     return(
       <form onSubmit={(event) => this.handleOnSubmit(event)}>
         <p>
@@ -52,8 +51,8 @@ export class RestaurantInput extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addRestaurant: () => {
-      dispatch(addRestaurant())
+    addRestaurant: (newRestaurant) => {
+      dispatch(addRestaurant(newRestaurant))
     }
   };
 };
