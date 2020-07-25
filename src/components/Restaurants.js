@@ -18,6 +18,7 @@ class Restaurants extends Component {
 };
 
 const mapStateToProps = state => {
+  // debugger
   return { restaurants: state.restaurants }
 }
 
