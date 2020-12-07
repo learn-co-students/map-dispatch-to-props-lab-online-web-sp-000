@@ -4,7 +4,8 @@ export default function manageRestaurants(state = {
   switch (action.type) {
 
     case 'ADD_RESTAURANT':
-      return {
+    console.log("will add")  
+    return {
         ...state,
         restaurants: [...state.restaurants, action.restaurant]
       }
