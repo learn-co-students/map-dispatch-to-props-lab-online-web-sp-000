@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addRestaurant } from '../actions/restaurants';
 
 class Restaurants extends Component {
+
+  handleOnClick = (e) => {
+    this.props.addRestaurant();
+  }
 
   render() {
 
@@ -11,14 +16,14 @@ class Restaurants extends Component {
       <div>
         <ul>
           {restaurants}
+          <button onClick={(event) => this.handleOnClick(event)}>
+          Click
+          </button>
+          <p>{this.props.restaurants.length}</p>
         </ul>
       </div>
     );
   }
 };
 
-const mapStateToProps = state => {
-  return { restaurants: state.restaurants }
-}
-
-export default connect(mapStateToProps)(Restaurants);
+export default connect(state => ({ restaurants: state.restaurants}), { addRestaurant })(Restaurants);
