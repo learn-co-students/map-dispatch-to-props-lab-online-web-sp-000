@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addRestaurant } from './actions/restaurants'
 
-class Restaurants extends Component {
+export class Restaurants extends Component {
 
   render() {
 
@@ -18,15 +17,8 @@ class Restaurants extends Component {
   }
 };
 
-const mapStateToProps = state => {
-  return { restaurants: state.restaurants }
+function mapStateToProps(state){
+  return {restaurants: state.restaurants}
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addRestaurant: () => { dispatch(addRestaurant()) }
-    }
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Restaurants);
+export default connect(mapStateToProps)(Restaurants);
