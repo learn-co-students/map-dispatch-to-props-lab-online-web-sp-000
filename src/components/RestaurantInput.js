@@ -23,7 +23,7 @@ export class RestaurantInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    // add missing code
+    this.props.addRestaurant(this.state)
   }
 
   render() {
@@ -51,4 +51,17 @@ export class RestaurantInput extends Component {
 
 
 //connect this component by wrapping RestaurantInput below
-export default RestaurantInput
+
+ 
+// Code change: this new function takes in dispatch as an argument
+// It then returns an object that contains a function as a value!
+// Notice above in handleOnClick() that this function, addItem(),
+// is what is called, NOT the addItem action creator itself.
+const mapDispatchToProps = dispatch => {
+  return {
+    addRestaurant: (restaurant) => {
+      dispatch(addRestaurant(restaurant))
+    }
+  };
+};
+export default connect(null, mapDispatchToProps)(RestaurantInput);
