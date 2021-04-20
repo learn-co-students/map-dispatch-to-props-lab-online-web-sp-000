@@ -5,6 +5,7 @@ export default function manageRestaurants(state = {
 
     case 'ADD_RESTAURANT':
       return {
+        
         ...state,
         restaurants: [...state.restaurants, action.restaurant]
       }
