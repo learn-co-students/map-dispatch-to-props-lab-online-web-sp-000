@@ -1,3 +1,5 @@
+import { connect } from "react-redux";
+
 export default function manageRestaurants(state = {
   restaurants: []
 }, action) {
@@ -14,3 +16,19 @@ export default function manageRestaurants(state = {
 
   }
 };
+
+const mapDispatchToProps = dispatch => {
+  return {
+    restaurants: () => {
+      dispatch(action.restaurants)
+    }
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    restaurants: state.items
+  }
+}
+
+connect(mapStateToProps, mapDispatchToProps)(manageRestaurants);
